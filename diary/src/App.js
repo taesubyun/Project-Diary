@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import New from './pages/New';
 import Edit from './pages/Edit';
 import Diary from './pages/Diary';
+//components
+import Button from './components/Button';
 
 function App() {
     return (
@@ -12,6 +14,27 @@ function App() {
                 <h2>앱쩜제이에스</h2>
                 {/* <img src={process.env.PUBLIC_URL + '/assets/emotion1.png'} /> */}
                 {/* -  어떤 위치에 있던지 <Public 디렉토리> 경로를 가리킨다 + 이미지 소스  */}
+                <Button
+                    text={'버튼'}
+                    onClick={() => {
+                        alert('버튼 클릭');
+                    }}
+                    type={'positive'}
+                />
+                <Button
+                    text={'버튼'}
+                    onClick={() => {
+                        alert('버튼 클릭');
+                    }}
+                    type={'negative'}
+                />
+                <Button
+                    text={'버튼'}
+                    onClick={() => {
+                        alert('버튼 클릭');
+                    }}
+                />
+
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/new' element={<New />} />

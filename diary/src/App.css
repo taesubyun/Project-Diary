@@ -30,3 +30,29 @@ body {
     min-height: 100vh;
     padding: 0 20px;
 }
+
+/* Button Component */
+.button-form {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 20px;
+    white-space: nowrap;
+    /* white-space : 버튼 안에 있는 글자가 짤려서 2줄이 되지 않게 하기 위한 속성 */
+}
+
+.button-form_default {
+    background-color: #ececec;
+    color: black;
+}
+
+.button-form_positive {
+    background-color: blue;
+    color: white;
+}
+
+.button-form_negative {
+    background-color: red;
+    color: white;
+}
