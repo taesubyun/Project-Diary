@@ -56,3 +56,38 @@ body {
     background-color: red;
     color: white;
 }
+
+/* Header Component */
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    /* // 가로로 */
+    align-items: center;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+    display: flex;
+}
+
+header .head-text {
+    width: 50%;
+    font-size: 30px;
+    justify-content: center;
+}
+
+header .head-btn-left {
+    width: 25%;
+    justify-content: start;
+}
+
+header .head-btn-right {
+    width: 25%;
+    justify-content: end;
+}
+
+header button {
+    font-family: 'Do Hyeon', sans-serif;
+}
