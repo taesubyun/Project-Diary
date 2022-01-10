@@ -13,7 +13,7 @@ const Diary = () => {
             >
                 홈으로 가기
             </button>
-            {/* 개꿀 뒤로가기 */}
+            {/* Tip :: 뒤로가기 */}
             <button
                 onClick={() => {
                     navigate(-1);
