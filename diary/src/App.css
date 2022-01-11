@@ -44,6 +44,8 @@ body {
 
 .button-form_default {
     background-color: #ececec;
+    border: none;
+    border-radius: 5px;
     color: black;
 }
 
@@ -163,4 +165,23 @@ header button {
 
 .DiaryItem .emotion_img_wrapper img {
     width: 50%;
+}
+
+.DiaryItem .info_wrapper {
+    flex-grow: 1;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.DiaryItem .diary_date {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.DiaryItem .diary_content_preview {
+    font-size: 15px;
+}
+
+.DiaryItem .btn_wrapper {
+    min-width: 70px;
 }
