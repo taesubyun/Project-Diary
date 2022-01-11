@@ -3,11 +3,12 @@ import Button from './../components/Button';
 const DiaryItem = ({ id, emotion, content, date }) => {
     const strDate = new Date(parseInt(date)).toLocaleDateString();
     const navigate = useNavigate();
+
     const goDetail = () => {
-        navigate(`/diary/${id}`);
+        navigate(`/diary`);
     };
     const goEdit = () => {
-        navigate(`/edit/${id}`);
+        navigate(`/edit`);
     };
 
     return (
