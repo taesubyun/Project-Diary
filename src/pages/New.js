@@ -1,8 +1,8 @@
+import Header from './../components/Header';
 const New = () => {
     return (
         <div>
-            <h1>New</h1>
-            <p>이곳은 일기 작성 페이지 입니다.</p>
+            <Header headText={'새 일기 쓰기'} />
         </div>
     );
 };
