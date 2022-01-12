@@ -1,10 +1,7 @@
-import Header from './../components/Header';
+import DiaryEditor from '../components/DiaryEditor';
+
 const New = () => {
-    return (
-        <div>
-            <Header headText={'새 일기 쓰기'} />
-        </div>
-    );
+    return <DiaryEditor />;
 };
 
 export default New;
