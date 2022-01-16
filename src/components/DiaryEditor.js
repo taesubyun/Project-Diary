@@ -1,10 +1,11 @@
-import Header from './Header';
-import Button from './Button';
 import { useNavigate } from 'react-router-dom';
-import EmotionItem from './EmotionItem';
-
 import { DiaryDispatchContext } from './../App';
 import { useEffect, useContext, useRef, useState } from 'react';
+import Header from './Header';
+import Button from './Button';
+import EmotionItem from './EmotionItem';
+
+import { getStringDate } from '../utils/date.js';
 
 const emotionList = [
     {
@@ -34,16 +35,12 @@ const emotionList = [
     },
 ];
 
-const getStringDate = (date) => {
-    return date.toISOString().slice(0, 10);
-};
-
 const DiaryEditor = ({ isEdit, originData }) => {
     const contentRef = useRef();
     const [content, setContent] = useState('');
     const [emotion, setEmotion] = useState(3);
     const [date, setDate] = useState(getStringDate(new Date()));
-    const { onCreate, onEdit } = useContext(DiaryDispatchContext);
+    const { onCreate, onEdit, onRemove } = useContext(DiaryDispatchContext);
     const handleClickEmote = (emotion) => {
         setEmotion(emotion);
     };
@@ -73,6 +70,12 @@ const DiaryEditor = ({ isEdit, originData }) => {
         navigate('/', { replace: true });
     };
 
+    const handleRemove = () => {
+        if (window.confirm('정말 삭제하시겠습니까?')) {
+            onRemove(originData.id);
+            navigate('/', { replace: true });
+        }
+    };
     useEffect(() => {
         if (isEdit) {
             setDate(getStringDate(new Date(parseInt(originData.date))));
@@ -86,6 +89,15 @@ const DiaryEditor = ({ isEdit, originData }) => {
                 headText={isEdit ? '일기 수정하기' : '새 일기 쓰기'}
                 leftChild={
                     <Button text={'< 뒤로'} onClick={() => navigate(-1)} />
+                }
+                rightChild={
+                    isEdit && (
+                        <Button
+                            text={'삭제하기'}
+                            type={'negative'}
+                            onClick={handleRemove}
+                        ></Button>
+                    )
                 }
             />
             <div>

@@ -1,7 +1,8 @@
-import DiaryEditor from '../components/DiaryEditor.js';
+import DiaryEditor from '../components/DiaryEditor';
 import { useState, useContext, useEffect } from 'react';
 import { DiaryStateContext } from '../App.js';
 import { useNavigate, useParams } from 'react-router-dom';
+
 const Edit = () => {
     const [originData, setOriginData] = useState();
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ const Edit = () => {
             if (targetDiary) {
                 setOriginData(targetDiary);
             } else {
+                alert('없는 일기입니다');
                 navigate('/', { replce: true });
             }
         }
