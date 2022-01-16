@@ -1,4 +1,4 @@
-import React, { useRef, useReducer } from 'react';
+import { useRef, useReducer } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -6,6 +6,7 @@ import New from './pages/New';
 import Edit from './pages/Edit';
 import Diary from './pages/Diary';
 import { useEffect } from 'react/cjs/react.development';
+
 //components
 // import Button from './components/Button';
 // import Header from './components/Header';
